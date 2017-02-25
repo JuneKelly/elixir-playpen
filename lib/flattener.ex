@@ -1,11 +1,11 @@
 defmodule Flattener do
 
   def flatten(l) do
-    Enum.reduce(l, [], fn(i, acc) ->
-      if is_list(i) do
-        acc ++ flatten(i)
+    Enum.reduce(l, [], fn(e, acc) ->
+      if is_list(e) do
+        acc ++ flatten(e)
       else
-        acc ++ [i]
+        acc ++ [e]
       end
     end)
   end
