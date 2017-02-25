@@ -13,7 +13,13 @@ defmodule FlattenerTest do
   end
 
   test "returns empty list for nested empty lists" do
-    assert flatten([[], [[]], []]) == []
+    Enum.each([
+      [[], [[]], []],
+      [[]],
+      [[[[[]], [[]]]]]
+    ], fn(example) ->
+      assert flatten(example) == []
+    end)
   end
 
   test "flatten a simple nested list" do
