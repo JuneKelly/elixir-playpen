@@ -1,4 +1,4 @@
-defmodule Flattener do
+defmodule Playpen.Flattener do
 
   def flatten(l) do
     Enum.reduce(l, [], fn(e, acc) ->

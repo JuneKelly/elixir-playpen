@@ -1,8 +1,8 @@
 defmodule FlattenerTest do
   use ExUnit.Case
-  import Flattener, only: [flatten: 1]
+  import Playpen.Flattener, only: [flatten: 1]
 
-  doctest Flattener
+  doctest Playpen.Flattener
 
   test "return empty list unaltered" do
     assert flatten([]) == []
