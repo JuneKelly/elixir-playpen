@@ -11,15 +11,15 @@ defmodule Playpen.Parens do
         else
           case c do
             "(" ->
-              {counter+1, invalid}
+              {counter+1, false}
             ")" ->
               if counter == 0 do
                 {counter, true}
               else
-                {counter-1, invalid}
+                {counter-1, false}
               end
             _ ->
-              {counter, invalid}
+              {counter, false}
           end
         end
       end
